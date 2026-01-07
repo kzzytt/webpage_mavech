@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kai Augusto - KAIROS LAB DESIGN">
+    <title>Mavech Representações | Soluções em Brinquedos e Embalagens</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fontes e Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper.js (Para o Banner/Slider) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2563EB 0%, #DB2777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #2563EB !important;
+            width: 14px !important;
+            height: 14px !important;
+            opacity: 1 !important
+        }
+
+        .solution-card img {
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .solution-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .brand-logo {
+            filter: grayscale(1);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="icon" type="image/svg" sizes="48x48" href="favicon.svg">
+</head>
+
+<body class="bg-white text-slate-900">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="logo_mavech.png" alt="Logo Mavech" class="h-14 w-auto object-contain">
+            </div>
+            <nav class="hidden md:flex items-center gap-8 font-bold text-sm text-slate-600">
+                <a href="#home" class="hover:text-blue-600 transition-colors">INÍCIO</a>
+                <a href="#sobre" class="hover:text-blue-600 transition-colors">SOBRE NÓS</a>
+                <a href="#solucoes" class="hover:text-blue-600 transition-colors">SOLUÇÕES</a>
+                <a href="#marcas" class="hover:text-blue-600 transition-colors">MARCAS</a>
+                <a href="#contato"
+                    class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-100">CONTATO</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section id="home" class="relative h-[85vh] md:h-screen pt-20">
+        <div class="swiper mainHero h-full">
+            <div class="swiper-wrapper">
+                <!-- Slide 1: Brinquedos -->
+                <div class="swiper-slide relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1700954849022-31514b6c6aae?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="absolute inset-0 w-full h-full object-cover" alt="Brinquedos">
+                    <div class="absolute inset-0 hero-overlay"></div>
+                    <div class="relative container mx-auto px-6 h-full flex items-center">
+                        <div class="max-w-3xl text-white space-y-6">
+                            <h2 class="text-blue-400 font-bold tracking-widest uppercase">Mix Completo</h2>
+                            <h1 class="text-5xl md:text-8xl font-black leading-tight">Jogos e <span
+                                    class="text-blue-400">Brinquedos</span></h1>
+                            <p class="text-lg opacity-90 max-w-xl">As melhores marcas do mercado nacional direto para
+                                sua loja com condições exclusivas de fábrica.</p>
+                            <a href="#solucoes"
+                                class="inline-block bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-2xl">Ver
+                                Coleção</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2: Baby -->
+                <div class="swiper-slide relative overflow-hidden">
+                    <img src="baby_toy.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Linha Baby">
+                    <div class="absolute inset-0 hero-overlay"></div>
+                    <div class="relative container mx-auto px-6 h-full flex items-center">
+                        <div class="max-w-3xl text-white space-y-6">
+                            <h2 class="text-purple-400 font-bold tracking-widest uppercase">Puericultura Leve</h2>
+                            <h1 class="text-5xl md:text-8xl font-black leading-tight">Linha <span
+                                    class="text-purple-400">Baby</span> Puericultura</h1>
+                            <p class="text-lg opacity-90 max-w-xl">Segurança e conforto para os pequenos com produtos
+                                certificados e de alto giro.</p>
+                            <a href="#solucoes"
+                                class="inline-block bg-purple-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-purple-700 transition-all shadow-2xl">Conhecer
+                                Linha</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3: Bolhas -->
+                <div class="swiper-slide relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1614113036347-9f60df80730a?q=80&w=1197&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="absolute inset-0 w-full h-full object-cover" alt="Bolhas de Sabão">
+                    <div class="absolute inset-0 hero-overlay"></div>
+                    <div class="relative container mx-auto px-6 h-full flex items-center">
+                        <div class="max-w-3xl text-white space-y-6">
+                            <h2 class="text-cyan-400 font-bold tracking-widest uppercase">Diversão Garantida</h2>
+                            <h1 class="text-5xl md:text-8xl font-black leading-tight">Bolhas de <span
+                                    class="text-cyan-400">Sabão</span></h1>
+                            <p class="text-lg opacity-90 max-w-xl">A maior variedade de personagens e licenciados que
+                                encantam crianças e adultos.</p>
+                            <a href="#solucoes"
+                                class="inline-block bg-cyan-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-cyan-700 transition-all shadow-2xl">Solicitar
+                                Mix</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 4: Embalagens -->
+                <div class="swiper-slide relative overflow-hidden">
+                    <img src="gala_saquinho.png" class="absolute inset-0 w-full h-full object-cover" alt="Embalagens">
+                    <div class="absolute inset-0 hero-overlay"></div>
+                    <div class="relative container mx-auto px-6 h-full flex items-center">
+                        <div class="max-w-3xl text-white space-y-6">
+                            <h2 class="text-amber-400 font-bold tracking-widest uppercase">Apresentação Nota 10</h2>
+                            <h1 class="text-5xl md:text-8xl font-black leading-tight">Embalagens para <span
+                                    class="text-amber-400">Presente</span></h1>
+                            <p class="text-lg opacity-90 max-w-xl">Sacos de presente, papéis de presente e sacos para
+                                cestas para elevar o nível do seu presente.</p>
+                            <a href="#contato"
+                                class="inline-block bg-amber-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-amber-700 transition-all shadow-2xl">Ver
+                                Catálogo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 5: Kraft -->
+                <div class="swiper-slide relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1760565030243-c92ed557e8da?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="absolute inset-0 w-full h-full object-cover" alt="Embalagens">
+                    <div class="absolute inset-0 hero-overlay"></div>
+                    <div class="relative container mx-auto px-6 h-full flex items-center">
+                        <div class="max-w-3xl text-white space-y-6">
+                            <h2 class="text-green-900 font-bold tracking-widest uppercase">Sustentabilidade</h2>
+                            <h1 class="text-5xl md:text-8xl font-black leading-tight">Sacolas <span
+                                    class="text-green-900">Kraft</span></h1>
+                            <p class="text-lg opacity-90 max-w-xl">Sacos e Sacolas Kraft, Bobinas e Caixas. Tudo em
+                                sustentabilidade.</p>
+                            <a href="#contato"
+                                class="inline-block bg-green-700 text-white px-10 py-5 rounded-2xl font-bold hover:bg-green-900 transition-all shadow-2xl">Ver
+                                Produtos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós com Cards de Destaque -->
+    <section id="sobre" class="py-24 bg-slate-50 relative">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+                    class="rounded-[2.5rem] shadow-2xl" alt="Mavech Equipe">
+                <!-- Cards -->
+                <div
+                    class="absolute -bottom-8 -right-8 md:right-0 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4 animate-bounce-slow">
+                    <div
+                        class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-xl font-bold">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-black text-slate-900">+20 Anos</p>
+                        <p class="text-xs font-bold text-slate-400 uppercase">De Experiência no Mercado</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h6 class="text-blue-600 font-bold uppercase tracking-widest text-sm">Nossa Trajetória</h6>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-tight">Sua ponte para o <span
+                        class="text-blue-600">sucesso comercial.</span></h2>
+                <p class="text-slate-600 text-lg leading-relaxed">A <strong>Mavech Representações</strong> é
+                    especialista em conectar <strong>lojistas</strong> às melhores <strong>fábricas</strong> nacionais.
+                    Nosso foco é curadoria de produtos, garantindo que seu estoque tenha sempre o que há de mais
+                    rentável e desejado, seja em <strong>lojas físicas</strong> ou em <strong>e-commerce</strong>.</p>
+                <p class="text-slate-600 text-lg leading-relaxed">Prezamos pela transparência no atendimento, oferecendo
+                    aos clientes os melhores preços e condições de mercado. Nossa equipe está sempre pronta para
+                    auxiliar na escolha do mix ideal, alinhado ao perfil do seu público e às tendências do mercado.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                        <p class="text-3xl font-black text-blue-600">+1.000</p>
+                        <p class="text-slate-500 font-bold text-xs uppercase">Lojistas Atendidos</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                        <p class="text-3xl font-black text-blue-600">+2.000</p>
+                        <p class="text-slate-500 font-bold text-xs uppercase">Produtos Disponíveis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LINHAS -->
+    <section id="solucoes" class="py-24 bg-white">
+        <div class="container mx-auto px-6 text-center mb-16 space-y-4">
+            <h2 class="text-4xl md:text-5xl font-black">Nossas <span class="gradient-text">Soluções</span></h2>
+            <p class="text-slate-500 max-w-2xl mx-auto">Categorias selecionadas para garantir alto giro e lucratividade
+                para o seu negócio.</p>
+        </div>
+        <div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 1. Jogos e Brinquedos -->
+            <div class="solution-card relative rounded-[2.5rem] overflow-hidden group shadow-xl h-[450px]">
+                <img src="https://images.unsplash.com/photo-1596962387829-a584f96c4977?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="absolute inset-0 w-full h-full object-cover" alt="Jogos">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-10 text-white">
+                    <h3 class="text-3xl font-bold mb-3">Jogos e Brinquedos</h3>
+                    <p class="text-sm opacity-80">Líderes em diversão educativa.</p>
+                </div>
+            </div>
+            <!-- 2. Linha Baby -->
+            <div class="solution-card relative rounded-[2.5rem] overflow-hidden group shadow-xl h-[450px]">
+                <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=800"
+                    class="absolute inset-0 w-full h-full object-cover" alt="Linha Baby">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-10 text-white">
+                    <h3 class="text-3xl font-bold mb-3">Linha Baby</h3>
+                    <p class="text-sm opacity-80">Puericultura leve e acessórios para os primeiros anos.</p>
+                </div>
+            </div>
+            <!-- 3. Bolhas de Sabão -->
+            <div class="solution-card relative rounded-[2.5rem] overflow-hidden group shadow-xl h-[450px]">
+                <img src="https://images.unsplash.com/photo-1614113036347-9f60df80730a?q=80&w=1197&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="absolute inset-0 w-full h-full object-cover" alt="Bolhas de Sabão">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-10 text-white">
+                    <h3 class="text-3xl font-bold mb-3">Bolhas de Sabão</h3>
+                    <p class="text-sm opacity-80"> Espalhe a diversão no verão com bolhas de sabão.</p>
+                </div>
+            </div>
+            <!-- 4. Embalagens para Presente -->
+            <div class="solution-card relative rounded-[2.5rem] overflow-hidden group shadow-xl h-[450px]">
+                <img src="gala_saquinho.png" class="absolute inset-0 w-full h-full object-cover"
+                    alt="Embalagens Presente">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-10 text-white">
+                    <h3 class="text-3xl font-bold mb-3">Embalagens Presente</h3>
+                    <p class="text-sm opacity-80">Sofisticação e brilho para encantar no PDV.</p>
+                </div>
+            </div>
+            <!-- 5. Sacolas Kraft -->
+            <div class="solution-card relative rounded-[2.5rem] overflow-hidden group shadow-xl h-[450px]">
+                <img src="https://images.unsplash.com/photo-1648544365218-188e3d07dcac?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="absolute inset-0 w-full h-full object-cover" alt="Sacolas Kraft">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-10 text-white">
+                    <h3 class="text-3xl font-bold mb-3">Sacolas Kraft</h3>
+                    <p class="text-sm opacity-80">Linha sustentável, resistente e personalizada.</p>
+                </div>
+            </div>
+            <!-- 6. Card CTA -->
+            <div
+                class="bg-blue-600 rounded-[2.5rem] p-12 flex flex-col justify-center text-white h-[450px] shadow-2xl relative overflow-hidden group">
+                <div
+                    class="absolute -top-12 -right-12 w-40 h-40 bg-blue-500 rounded-full group-hover:scale-150 transition-transform duration-700">
+                </div>
+                <div class="relative z-10 space-y-6">
+                    <h3 class="text-4xl font-black leading-tight italic">Fale com um especialista</h3>
+                    <p class="text-blue-100 text-lg">Vamos montar o mix de produtos ideal para a sua região e perfil de
+                        cliente, garantindo sua rentabilidade.</p>
+                    <a href="#contato"
+                        class="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-2xl font-black shadow-xl hover:-translate-y-2 transition-all">
+                        MONTAR MEU MIX <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Marcas -->
+    <section id="marcas" class="py-20 bg-slate-50 border-y border-slate-100">
+        <div class="container mx-auto px-6">
+            <h4 class="text-center text-slate-400 font-bold uppercase tracking-[0.3em] text-[14px] mb-12">Fábricas que
+                Representamos</h4>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 items-center">
+                <div class="flex justify-center"><img src="pf_logo.png" class="brand-logo h-auto object-contain"
+                        alt="Pais e Filhos"></div>
+                <div class="flex justify-center"><img src="coluna_logo.png" class="brand-logo h-auto object-contain"
+                        alt="Coluna"></div>
+                <div class="flex justify-center"><img src="brasilflex_logo.png" class="brand-logo h-auto object-contain"
+                        alt="Brasilflex"></div>
+                <div class="flex justify-center"><img src="gala_logo.png" class="brand-logo h-auto object-contain"
+                        alt="Gala"></div>
+                <div class="flex justify-center"><img src="lc_logo.png" class="brand-logo h-auto object-contain"
+                        alt="LC"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16">
+            <div class="space-y-10">
+                <h2 class="text-5xl md:text-6xl font-black text-slate-900 leading-tight">Sua loja abastecida com <span
+                        class="text-blue-600">um clique.</span></h2>
+                <p class="text-slate-600 text-xl leading-relaxed">Solicite agora nossos catálogos atualizados e tabelas
+                    de preços de fábrica.</p>
+                <div class="space-y-6">
+                    <a href="https://wa.me/5511985370508" target="_blank"
+                        class="flex items-center gap-6 p-6 bg-slate-50 rounded-3xl border border-slate-100 hover:border-green-400 transition-colors group">
+                        <i
+                            class="fa-brands fa-whatsapp text-4xl text-green-500 group-hover:scale-110 transition-transform"></i>
+                        <div>
+                            <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">WhatsApp Comercial</p>
+                            <span class="text-2xl font-black text-slate-700">(11) 98537-0508</span>
+                        </div>
+                    </a>
+                    <div class="flex items-center gap-6 p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                        <i class="fa-solid fa-envelope text-4xl text-blue-500"></i>
+                        <div>
+                            <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">E-mail Corporativo</p>
+                            <span
+                                class="text-lg md:text-xl font-black text-slate-700">mavech@mavechrepresentacoes.com.br</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 p-10 md:p-12 rounded-[3rem] shadow-sm border border-slate-200">
+                <form id="contactForm" class="space-y-5">
+                    <input type="text" id="nome" required placeholder="Nome Completo / Responsável"
+                        class="w-full p-5 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all">
+                    <div class="grid grid-cols-2 gap-5">
+                        <input type="text" id="cnpj" required placeholder="CNPJ da Loja"
+                            class="w-full p-5 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all">
+                        <input type="tel" id="telefone" required placeholder="Telefone / Celular"
+                            class="w-full p-5 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all">
+                    </div>
+                    <input type="email" id="email" required placeholder="Seu E-mail Profissional"
+                        class="w-full p-5 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all">
+                    <textarea id="mensagem" required rows="4"
+                        placeholder="Quais marcas ou linhas despertaram seu interesse?"
+                        class="w-full p-5 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all resize-none"></textarea>
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white py-6 rounded-2xl font-black text-xl shadow-2xl hover:bg-blue-700 hover:-translate-y-1 transition-all">SOLICITAR
+                        TABELAS AGORA</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <img src="logo_b_mavech.png" alt="Logo Mavech" class="h-14 w-auto">
+                </div>
+                <p class="text-slate-400">Excelência em representação comercial, conectando as melhores indústrias aos
+                    lojistas que buscam qualidade.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 text-white uppercase tracking-widest text-xs">Navegação</h4>
+                <ul class="space-y-3 text-slate-400 font-medium">
+                    <li><a href="#home" class="hover:text-blue-500 transition-colors">Início</a></li>
+                    <li><a href="#sobre" class="hover:text-blue-500 transition-colors">Sobre Nós</a></li>
+                    <li><a href="#solucoes" class="hover:text-blue-500 transition-colors">Produtos</a></li>
+                    <li><a href="#contato" class="hover:text-blue-500 transition-colors">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 text-white uppercase tracking-widest text-xs">Localização</h4>
+                <p class="text-slate-400 mb-4">Rua Botucatu, 482 - Vila Clementino<br>São Paulo - SP, 04023-061</p>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/mavechrepres/"
+                        class="text-slate-400 hover:text-white transition-colors text-xl"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/mavech/?viewAsMember=true"
+                        class="text-slate-400 hover:text-white transition-colors text-xl"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/mavechrepres/"
+                        class="text-slate-400 hover:text-white transition-colors text-xl"><i
+                            class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+            <p>&copy; 2026 Mavech Representações Comerciais. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5511985370508" target="_blank"
+        class="fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 hover:scale-110 transition-transform">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Hero Swiper
+        const swiper = new Swiper('.mainHero', {
+            loop: true,
+            autoplay: { delay: 4000 },
+            pagination: { el: '.swiper-pagination', clickable: true },
+        });
+
+        // Header Scroll
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('glass-nav');
+            else header.classList.remove('glass-nav');
+        });
+
+        // Form Submit
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Captura e limpa espaços extras
+            const nome = document.getElementById('nome').value.trim();
+            const cnpj = document.getElementById('cnpj').value.trim();
+            const tel = document.getElementById('telefone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('mensagem').value.trim();
+
+            // Validação de segurança extra
+            if (!nome || !cnpj || !tel || !email || !msg) {
+                alert('Por favor, preencha todos os campos antes de continuar.');
+                return;
+            }
+
+            // --- CONFIGURAÇÃO DO WHATSAPP ---
+            const meuNumero = "5511985370508"; // <--- COLOQUE SEU NÚMERO AQUI (Ex: 5511999999999)
+
+            const textoFinal = `*Novo Contato - Mavech Representações*
+    
+*Nome:* ${nome}
+*CNPJ:* ${cnpj}
+*Telefone:* ${tel}
+*E-mail:* ${email}
+*Interesse:* ${msg}`;
+
+            const url = `https://wa.me/${meuNumero}?text=${encodeURIComponent(textoFinal)}`;
+
+            // Abre o WhatsApp
+            window.open(url, '_blank');
+        });
+    </script>
+    <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
