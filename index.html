@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 
@@ -71,7 +70,66 @@
         }
 
         .hero-overlay {
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+        }
+
+
+        /* Container dos cards com fundo suave */
+        .product-card-wrapper {
+            background-color: #f8fafc;
+            /* Fundo levemente cinza */
+            border-radius: 12px;
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            /* Garante que o produto não estique */
+            margin-bottom: 15px;
+        }
+
+        .product-name {
+            font-size: 11px;
+            font-weight: 800;
+            text-align: center;
+            color: #1e293b;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            height: 40px;
+            /* Mantém o alinhamento mesmo com nomes longos */
+            display: flex;
+            align-items: center;
+        }
+
+        .product-stars {
+            color: #facc15;
+            /* Amarelo das estrelas */
+            font-size: 12px;
+        }
+
+        /* Paginação estilo barrinha */
+        .swiper-pagination-product .swiper-pagination-bullet {
+            width: 15px !important;
+            height: 4px !important;
+            border-radius: 2px !important;
+            background: #cbd5e1 !important;
+            opacity: 1 !important;
+        }
+
+        .swiper-pagination-product .swiper-pagination-bullet-active {
+            background: #2563eb !important;
         }
     </style>
     <script type="importmap">
@@ -101,6 +159,7 @@
                 <a href="#sobre" class="hover:text-blue-600 transition-colors uppercase">Sobre Nós</a>
                 <a href="#solucoes" class="hover:text-blue-600 transition-colors uppercase">Soluções</a>
                 <a href="#marcas" class="hover:text-blue-600 transition-colors uppercase">Marcas</a>
+                <a href="#produtos" class="hover:text-blue-600 transition-colors uppercase">Produtos</a>
                 <a href="#contato"
                     class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-100 uppercase">Contato</a>
             </nav>
@@ -125,7 +184,8 @@
             <a href="#sobre" class="mobile-link">Sobre Nós</a>
             <a href="#solucoes" class="mobile-link">Soluções</a>
             <a href="#marcas" class="mobile-link">Marcas</a>
-            <a href="#contato" class="bg-blue-600 text-white py-5 rounded-2xl text-center shadow-xl shadow-blue-100 mobile-link">Contato</a>
+            <a href="#contato"
+                class="bg-blue-600 text-white py-5 rounded-2xl text-center shadow-xl shadow-blue-100 mobile-link">Contato</a>
         </nav>
         <div class="mt-auto pt-8 border-t border-slate-100">
             <p class="text-slate-400 text-sm font-bold uppercase mb-4 tracking-widest">Siga-nos</p>
@@ -148,14 +208,16 @@
                     <div class="absolute inset-0 hero-overlay"></div>
                     <div class="relative container mx-auto px-6 h-full flex items-center">
                         <div class="max-w-3xl text-white space-y-4 md:space-y-6">
-                            <h2 class="text-blue-400 font-bold tracking-widest uppercase text-xs md:text-sm">Mix Completo</h2>
+                            <h2 class="text-blue-400 font-bold tracking-widest uppercase text-xs md:text-sm">Mix
+                                Completo</h2>
                             <h1 class="text-4xl md:text-8xl font-black leading-tight">Jogos e <span
                                     class="text-blue-400">Brinquedos</span></h1>
-                            <p class="text-base md:text-lg opacity-90 max-w-xl">As melhores marcas do mercado nacional direto para
+                            <p class="text-base md:text-lg opacity-90 max-w-xl">As melhores marcas do mercado nacional
+                                direto para
                                 sua loja com condições exclusivas de fábrica.</p>
                             <a href="#solucoes"
                                 class="inline-block bg-blue-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-2xl">Ver
-                                Marcas</a>
+                                Coleção</a>
                         </div>
                     </div>
                 </div>
@@ -165,13 +227,16 @@
                     <div class="absolute inset-0 hero-overlay"></div>
                     <div class="relative container mx-auto px-6 h-full flex items-center">
                         <div class="max-w-3xl text-white space-y-4 md:space-y-6">
-                            <h2 class="text-purple-400 font-bold tracking-widest uppercase text-xs md:text-sm">Puericultura Leve</h2>
+                            <h2 class="text-purple-400 font-bold tracking-widest uppercase text-xs md:text-sm">
+                                Puericultura Leve</h2>
                             <h1 class="text-4xl md:text-8xl font-black leading-tight">Linha <span
                                     class="text-purple-400">Baby</span> Puericultura</h1>
-                            <p class="text-base md:text-lg opacity-90 max-w-xl">Segurança e conforto para os pequenos com produtos
+                            <p class="text-base md:text-lg opacity-90 max-w-xl">Segurança e conforto para os pequenos
+                                com produtos
                                 certificados e de alto giro.</p>
-                            <a href="#contato"
-                                class="inline-block bg-purple-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold hover:bg-purple-700 transition-all shadow-2xl">Saiba Mais!</a>
+                            <a href="#solucoes"
+                                class="inline-block bg-purple-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold hover:bg-purple-700 transition-all shadow-2xl">Conhecer
+                                Linha</a>
                         </div>
                     </div>
                 </div>
@@ -182,13 +247,16 @@
                     <div class="absolute inset-0 hero-overlay"></div>
                     <div class="relative container mx-auto px-6 h-full flex items-center">
                         <div class="max-w-3xl text-white space-y-4 md:space-y-6">
-                            <h2 class="text-cyan-400 font-bold tracking-widest uppercase text-xs md:text-sm">Diversão Garantida</h2>
+                            <h2 class="text-cyan-400 font-bold tracking-widest uppercase text-xs md:text-sm">Diversão
+                                Garantida</h2>
                             <h1 class="text-4xl md:text-8xl font-black leading-tight">Bolhas de <span
                                     class="text-cyan-400">Sabão</span></h1>
-                            <p class="text-base md:text-lg opacity-90 max-w-xl">A maior variedade de personagens e licenciados que
+                            <p class="text-base md:text-lg opacity-90 max-w-xl">A maior variedade de personagens e
+                                licenciados que
                                 encantam crianças e adultos.</p>
-                            <a href="#contato"
-                                class="inline-block bg-cyan-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold hover:bg-cyan-700 transition-all shadow-2xl">Saiba Mais!</a>
+                            <a href="#solucoes"
+                                class="inline-block bg-cyan-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold hover:bg-cyan-700 transition-all shadow-2xl">Solicitar
+                                Mix</a>
                         </div>
                     </div>
                 </div>
@@ -198,13 +266,16 @@
                     <div class="absolute inset-0 hero-overlay"></div>
                     <div class="relative container mx-auto px-6 h-full flex items-center">
                         <div class="max-w-3xl text-white space-y-4 md:space-y-6">
-                            <h2 class="text-amber-400 font-bold tracking-widest uppercase text-xs md:text-sm">Apresentação Nota 10</h2>
+                            <h2 class="text-amber-400 font-bold tracking-widest uppercase text-xs md:text-sm">
+                                Apresentação Nota 10</h2>
                             <h1 class="text-4xl md:text-8xl font-black leading-tight">Embalagens <span
                                     class="text-amber-400">Presente</span></h1>
-                            <p class="text-base md:text-lg opacity-90 max-w-xl">Sacos de presente, papéis de presente e sacos para
+                            <p class="text-base md:text-lg opacity-90 max-w-xl">Sacos de presente, papéis de presente e
+                                sacos para
                                 cestas para elevar o nível do seu presente.</p>
                             <a href="#contato"
-                                class="inline-block bg-amber-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold hover:bg-amber-700 transition-all shadow-2xl">Saiba Mais!</a>
+                                class="inline-block bg-amber-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold hover:bg-amber-700 transition-all shadow-2xl">Ver
+                                Catálogo</a>
                         </div>
                     </div>
                 </div>
@@ -215,13 +286,16 @@
                     <div class="absolute inset-0 hero-overlay"></div>
                     <div class="relative container mx-auto px-6 h-full flex items-center">
                         <div class="max-w-3xl text-white space-y-4 md:space-y-6">
-                            <h2 class="text-green-500 font-bold tracking-widest uppercase text-xs md:text-sm">Sustentabilidade</h2>
+                            <h2 class="text-green-900 font-bold tracking-widest uppercase text-xs md:text-sm">
+                                Sustentabilidade</h2>
                             <h1 class="text-4xl md:text-8xl font-black leading-tight">Sacolas <span
                                     class="text-green-500">Kraft</span></h1>
-                            <p class="text-base md:text-lg opacity-90 max-w-xl">Sacos e Sacolas Kraft, Bobinas e Caixas. Tudo em
+                            <p class="text-base md:text-lg opacity-90 max-w-xl">Sacos e Sacolas Kraft, Bobinas e Caixas.
+                                Tudo em
                                 sustentabilidade.</p>
                             <a href="#contato"
-                                class="inline-block bg-green-500 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold hover:bg-green-800 transition-all shadow-2xl">Saiba Mais!</a>
+                                class="inline-block bg-green-700 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold hover:bg-green-900 transition-all shadow-2xl">Ver
+                                Produtos</a>
                         </div>
                     </div>
                 </div>
@@ -253,10 +327,13 @@
                 <h6 class="text-blue-600 font-bold uppercase tracking-widest text-xs md:text-sm">Nossa Trajetória</h6>
                 <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight">Sua ponte para o <span
                         class="text-blue-600">sucesso comercial.</span></h2>
-                <p class="text-slate-600 text-base md:text-lg leading-relaxed">A <strong>Mavech Representações</strong> é
+                <p class="text-slate-600 text-base md:text-lg leading-relaxed">A <strong>Mavech Representações</strong>
+                    é
                     especialista em conectar <strong>lojistas</strong> às melhores <strong>fábricas</strong> nacionais.
-                    Nosso foco é curadoria de produtos, garantindo rentabilidade seja em <strong>lojas físicas</strong> ou <strong>e-commerce</strong>.</p>
-                <p class="text-slate-600 text-base md:text-lg leading-relaxed">Prezamos pela transparência no atendimento, oferecendo aos clientes os melhores preços e condições de mercado.</p>    
+                    Nosso foco é curadoria de produtos, garantindo rentabilidade seja em <strong>lojas físicas</strong>
+                    ou <strong>e-commerce</strong>.</p>
+                <p class="text-slate-600 text-base md:text-lg leading-relaxed">Prezamos pela transparência no
+                    atendimento, oferecendo aos clientes os melhores preços e condições de mercado.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                     <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 text-center md:text-left">
                         <p class="text-3xl font-black text-blue-600">+1.000</p>
@@ -275,11 +352,13 @@
     <section id="solucoes" class="py-16 md:py-24 bg-white px-6 md:px-0">
         <div class="container mx-auto text-center mb-12 md:mb-16 space-y-4">
             <h2 class="text-3xl md:text-5xl font-black">Nossas <span class="gradient-text">Soluções</span></h2>
-            <p class="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">Categorias selecionadas para garantir alto giro e lucratividade.</p>
+            <p class="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">Categorias selecionadas para garantir alto
+                giro e lucratividade.</p>
         </div>
         <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- 1. Jogos -->
-            <div class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
+            <div
+                class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
                 <img src="https://images.unsplash.com/photo-1596962387829-a584f96c4977?q=80&w=800&auto=format&fit=crop"
                     class="absolute inset-0 w-full h-full object-cover" alt="Jogos">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -289,7 +368,8 @@
                 </div>
             </div>
             <!-- 2. Baby -->
-            <div class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
+            <div
+                class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
                 <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=800"
                     class="absolute inset-0 w-full h-full object-cover" alt="Linha Baby">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -299,7 +379,8 @@
                 </div>
             </div>
             <!-- 3. Bolhas -->
-            <div class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
+            <div
+                class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
                 <img src="https://images.unsplash.com/photo-1614113036347-9f60df80730a?q=80&w=800&auto=format&fit=crop"
                     class="absolute inset-0 w-full h-full object-cover" alt="Bolhas">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -309,7 +390,8 @@
                 </div>
             </div>
             <!-- 4. Embalagens -->
-            <div class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
+            <div
+                class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
                 <img src="gala_saquinho.png" class="absolute inset-0 w-full h-full object-cover"
                     alt="Embalagens Presente">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -319,7 +401,8 @@
                 </div>
             </div>
             <!-- 5. Kraft -->
-            <div class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
+            <div
+                class="solution-card relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group shadow-xl h-[350px] md:h-[450px]">
                 <img src="https://images.unsplash.com/photo-1648544365218-188e3d07dcac?q=80&w=800&auto=format&fit=crop"
                     class="absolute inset-0 w-full h-full object-cover" alt="Sacolas Kraft">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -336,7 +419,8 @@
                 </div>
                 <div class="relative z-10 space-y-4 md:space-y-6">
                     <h3 class="text-2xl md:text-4xl font-black leading-tight italic">Fale com um especialista</h3>
-                    <p class="text-blue-100 text-sm md:text-lg">Vamos montar o mix de produtos ideal para a sua loja.</p>
+                    <p class="text-blue-100 text-sm md:text-lg">Vamos montar o mix de produtos ideal para a sua loja.
+                    </p>
                     <a href="#contato"
                         class="inline-flex items-center gap-3 bg-white text-blue-600 px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl font-black shadow-xl hover:-translate-y-2 transition-all text-sm md:text-base">
                         MONTAR MEU MIX <i class="fa-solid fa-arrow-right"></i>
@@ -349,13 +433,346 @@
     <!-- Marcas -->
     <section id="marcas" class="py-12 md:py-20 bg-slate-50 border-y border-slate-100 px-6">
         <div class="container mx-auto">
-            <h4 class="text-center text-slate-400 font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-[14px] mb-12">Fábricas que Representamos</h4>
+            <h4
+                class="text-center text-slate-400 font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-[14px] mb-12">
+                Fábricas que Representamos</h4>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 items-center">
-                <img src="pf_logo.png" class="brand-logo h-auto md:h-auto w-auto mx-auto object-contain" alt="Pais e Filhos">
-                <img src="coluna_logo.png" class="brand-logo h-auto md:h-auto w-auto mx-auto object-contain" alt="Coluna">
-                <img src="brasilflex_logo.png" class="brand-logo h-auto md:h-auto w-auto mx-auto object-contain" alt="Brasilflex">
+                <img src="pf_logo.png" class="brand-logo h-auto md:h-auto w-auto mx-auto object-contain"
+                    alt="Pais e Filhos">
+                <img src="coluna_logo.png" class="brand-logo h-auto md:h-auto w-auto mx-auto object-contain"
+                    alt="Coluna">
+                <img src="brasilflex_logo.png" class="brand-logo h-auto md:h-auto w-auto mx-auto object-contain"
+                    alt="Brasilflex">
                 <img src="gala_logo.png" class="brand-logo h-auto md:h-auto w-auto mx-auto object-contain" alt="Gala">
                 <img src="lc_logo.png" class="brand-logo h-auto md:h-auto w-auto mx-auto object-contain" alt="LC">
+            </div>
+        </div>
+    </section>
+    <!-- Produtos -->
+    <section id="produtos" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black uppercase">Campeões de Venda</h2>
+                <p class="text-slate-500">Tenha em sua loja produtos inovadores e os personagens mais queridos dos seus
+                    clientes</p>
+            </div>
+
+            <div class="swiper productSwiper pb-12">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/790347.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 790347 - COZINHA FAZ DE CONTA</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://www.paisefilhos.ind.br/sistema/uploads/webp/67c853ec1a320.webp"
+                                class="product-image" alt="Produto">
+                            <h3 class="product-name">REF 792906 - SHOW DO MILHÃO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/7460.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 7460 - CAIU PERDEU 54PCS</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://www.paisefilhos.ind.br/sistema/uploads/webp/6894f79cafdb6.webp"
+                                class="product-image" alt="Produto">
+                            <h3 class="product-name">REF 793389 - JOGO DAS 3 PISTAS</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/2866.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 2866 - SUSPEITO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/7282.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 7282 - MÁGICAS</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/2817.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 2817 - CUCA LEGAL JR.</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/7172.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 7172 - STOP</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/2976.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 2976 - Q. CABEÇA RAINBOW</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://www.paisefilhos.ind.br/sistema/uploads/webp/67cf119c37a0e.webp"
+                                class="product-image" alt="Produto">
+                            <h3 class="product-name">REF 793009 - Q. CABEÇA POLVO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/790702.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 790702 - Q. CABEÇA RIO DE JANEIRO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/810001.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 810001 - REFIL BUBBLE 1LT</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://www.brasilflex.com.br/sistema/uploads/webp/67c87f68029b7.webp"
+                                class="product-image" alt="Produto">
+                            <h3 class="product-name">REF 873296 - BOLHA DE SABÃO STITCH</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/811085.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 811085 - MINI QUEBRA-CABEÇA STITCH</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/834016.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 834016 - BOLHA DE SABÃO SPIDERMAN</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://www.brasilflex.com.br/sistema/uploads/webp/67c87b993f045.webp"
+                                class="product-image" alt="Produto">
+                            <h3 class="product-name">REF 811083 - MINI QUEBRA-CABEÇA SPIDERMAN</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/811082.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 811082 - MINI QUEBRA-CABEÇA MOANA</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/834009.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 834009 - BOLHA DE SABÃO MICKEY</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/7709.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 7709 - PATA MÃE</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/3330.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 3330 - MORDEDOR MEU CONTROLE</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/790729.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 790729 - MORDEDOR JOYSTICK</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/7705.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 7705 - MORDEDOR MAOZINHA</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/790726.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">REF 790726 - MORDEDOR POW BOLOFOFOS</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/1199100135.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SAQUINHO PRESENTE BEBÊ</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/1199100162.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SAQUINHO PRESENTE INFANTIL</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/1199100160.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SAQUINHO PRESENTE JUVENIL</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/1199100028.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SAQUINHO PRESENTE ROMÂNTICO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/1199100032.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SAQUINHO PRESENTE FEMININO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/1199200061.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SAQUINHO PRESENTE CASUAL</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://imagens.dados-gala.com.br/imagens/1199200024.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SAQUINHO PRESENTE LISO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://www.gala.com.br/sistema/uploads/6639262766960.png" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">CX. POLI PROPILENO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://www.gala.com.br/sistema/uploads/66391e5850229.png" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">CX. PAPEL PRESENTE</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://images.tcdn.com.br/img/img_prod/1263273/sacola_lc_liso_presente_papel_kraft_natural_alca_natural_10un_1391_1_c06c00f3dc717c02d8957f45198cc407.jpeg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SACOLA KRAFT NATURAL</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://images.tcdn.com.br/img/img_prod/1263273/sacola_papel_branco_c_10_1363_1_bea6b5c0393de678992b2233e3026425.jpeg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SACOLA KRAFT BRANCA</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://images.tcdn.com.br/img/img_prod/1263273/sacola_papel_branco_colorida_c_10_1293_1_c1edba9866e698a3f54dc0b2115b7e84.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SACOLA COLORIDA</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://images.tcdn.com.br/img/img_prod/1263273/sacola_papel_natural_c_10_pascoa_palavras_1377_1_0f8088431f6cf068f7f61f9bf89b0566.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SACOLA TEMÁTICA - PÁSCOA</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://images.tcdn.com.br/img/img_prod/1263273/sacola_papel_natural_c_10_voce_e_especial_1309_1_e72fc9ed798b842213ed2239fa297547.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SACOLA TEMÁTICA ADULTO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://images.tcdn.com.br/img/img_prod/1263273/sacola_lc_safari_baby_presente_papel_kraft_branco_alca_colorido_10un_17_5x8_5x21_5_1441_1_3a76ca060250180c21ab8e638d8a4d0a.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SACOLA TEMÁTICA - INFANTIL</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card-wrapper">
+                            <img src="https://images.tcdn.com.br/img/img_prod/1263273/sacola_lc_vinho_papel_kraft_alca_colorida_10un_1535_1_364b1831f9eedd0e6c1e1ba019e68a78.jpg" class="product-image"
+                                alt="Produto">
+                            <h3 class="product-name">SACOLA P/ VINHO</h3>
+                            <div class="product-stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-product"></div>
             </div>
         </div>
     </section>
@@ -370,17 +787,24 @@
                 <div class="space-y-4 md:space-y-6">
                     <a href="https://wa.me/5511985370508" target="_blank"
                         class="flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-slate-50 rounded-2xl md:rounded-3xl border border-slate-100 hover:border-green-400 transition-all group shadow-sm text-left">
-                        <i class="fa-brands fa-whatsapp text-3xl md:text-4xl text-green-500 group-hover:scale-110 transition-transform"></i>
+                        <i
+                            class="fa-brands fa-whatsapp text-3xl md:text-4xl text-green-500 group-hover:scale-110 transition-transform"></i>
                         <div>
-                            <p class="text-[10px] md:text-sm font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">WhatsApp Comercial</p>
+                            <p
+                                class="text-[10px] md:text-sm font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">
+                                WhatsApp Comercial</p>
                             <span class="text-lg md:text-2xl font-black text-slate-700">(11) 98537-0508</span>
                         </div>
                     </a>
-                    <div class="flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-slate-50 rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm text-left">
+                    <div
+                        class="flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-slate-50 rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm text-left">
                         <i class="fa-solid fa-envelope text-3xl md:text-4xl text-blue-500"></i>
                         <div class="overflow-hidden">
-                            <p class="text-[10px] md:text-sm font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Email Corporativo</p>
-                            <span class="text-sm md:text-lg font-black text-slate-700 block truncate">mavech@mavechrepresentacoes.com.br</span>
+                            <p
+                                class="text-[10px] md:text-sm font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">
+                                Email Corporativo</p>
+                            <span
+                                class="text-sm md:text-lg font-black text-slate-700 block truncate">mavech@mavechrepresentacoes.com.br</span>
                         </div>
                     </div>
                 </div>
@@ -401,7 +825,8 @@
                     <textarea id="mensagem" required rows="4" placeholder="Quais marcas despertaram seu interesse?"
                         class="w-full p-4 md:p-5 bg-white border border-slate-200 rounded-xl md:rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all resize-none text-sm md:text-base"></textarea>
                     <button type="submit"
-                        class="w-full bg-blue-600 text-white py-4 md:py-6 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-2xl hover:bg-blue-700 transition-all">SOLICITAR TABELAS</button>
+                        class="w-full bg-blue-600 text-white py-4 md:py-6 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-2xl hover:bg-blue-700 transition-all">SOLICITAR
+                        TABELAS</button>
                 </form>
             </div>
         </div>
@@ -412,29 +837,38 @@
         <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
             <div>
                 <img src="logo_b_mavech.png" alt="Logo Mavech" class="h-10 md:h-14 mb-6">
-                <p class="text-slate-400 text-sm md:text-base max-w-xs">Especialistas em conectar o varejo às melhores indústrias nacionais que geram lucro.</p>
+                <p class="text-slate-400 text-sm md:text-base max-w-xs">Especialistas em conectar o varejo às melhores
+                    indústrias nacionais que geram lucro.</p>
             </div>
             <div>
-                <h4 class="font-bold mb-6 uppercase tracking-widest text-[10px] md:text-xs text-blue-500">Links Rápidos</h4>
+                <h4 class="font-bold mb-6 uppercase tracking-widest text-[10px] md:text-xs text-blue-500">Links Rápidos
+                </h4>
                 <ul class="space-y-3 text-slate-400 font-medium text-sm">
                     <li><a href="#home" class="hover:text-white transition-colors">Início</a></li>
                     <li><a href="#sobre" class="hover:text-white transition-colors">Sobre Nós</a></li>
-                    <li><a href="#solucoes" class="hover:text-white transition-colors">Produtos</a></li>
+                    <li><a href="#solucoes" class="hover:text-white transition-colors">Marcas</a></li>
+                    <li><a href="#produtos" class="hover:text-white transition-colors">Produtos</a></li>
                     <li><a href="#contato" class="hover:text-white transition-colors">Contato</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-bold mb-6 uppercase tracking-widest text-[10px] md:text-xs text-blue-500">Siga-nos</h4>
                 <div class="flex gap-4 text-2xl mb-6">
-                    <a href="https://www.instagram.com/mavechrepres/" class="text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/mavech/" class="text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/mavechrepres/" class="text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/mavechrepres/"
+                        class="text-slate-400 hover:text-white transition-colors"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/mavech/"
+                        class="text-slate-400 hover:text-white transition-colors"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/mavechrepres/"
+                        class="text-slate-400 hover:text-white transition-colors"><i
+                            class="fa-brands fa-facebook"></i></a>
                 </div>
                 <p class="text-slate-500 text-[10px] uppercase tracking-widest">São Paulo - SP</p>
             </div>
         </div>
         <div class="container mx-auto pt-8 border-t border-slate-800 text-center text-slate-500 text-[10px] md:text-xs">
-            <p>&copy; 2026 Mavech Representações Comerciais. Design Moderno para o Varejo.</p>
+            <p>&copy; 2026 Mavech Representações Comerciais.</p>
         </div>
     </footer>
 
@@ -448,7 +882,7 @@
         // Swiper
         const swiper = new Swiper('.mainHero', {
             loop: true,
-            autoplay: { delay: 5000, disableOnInteraction: false },
+            autoplay: { delay: 1000, disableOnInteraction: false }, // tempo que passa as imagens do banner
             pagination: { el: '.swiper-pagination', clickable: true },
             effect: 'fade',
             speed: 1000
@@ -493,6 +927,27 @@
             const textoFinal = `*SITE MAVECH - NOVO CONTATO*\n\n*Nome:* ${nome}\n*CNPJ:* ${cnpj}\n*Telefone:* ${tel}\n*E-mail:* ${email}\n*Mensagem:* ${msg}`;
             const url = `https://wa.me/5511985370508?text=${encodeURIComponent(textoFinal)}`;
             window.open(url, '_blank');
+        });
+    </script>
+
+    <script>
+        const productSwiper = new Swiper('.productSwiper', {
+            slidesPerView: 2, // 2 itens no celular
+            spaceBetween: 15,
+            loop: true,
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination-product',
+                clickable: true,
+            },
+            breakpoints: {
+                640: { slidesPerView: 3 },
+                1024: { slidesPerView: 5 }, // 5 ou 6 itens no computador como na imagem
+                1280: { slidesPerView: 6 }
+            }
         });
     </script>
     <script type="module" src="/index.tsx"></script>
