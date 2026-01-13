@@ -815,14 +815,14 @@
                     <input type="text" id="nome" required placeholder="Nome / Responsável"
                         class="w-full p-4 md:p-5 bg-white border border-slate-200 rounded-xl md:rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all text-sm md:text-base">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-                        <input type="text" id="cnpj" required placeholder="CNPJ da Loja"
+                        <input type="text" id="cnpj" required placeholder="CNPJ"
                             class="w-full p-4 md:p-5 bg-white border border-slate-200 rounded-xl md:rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all text-sm md:text-base">
                         <input type="tel" id="telefone" required placeholder="Telefone / Celular"
                             class="w-full p-4 md:p-5 bg-white border border-slate-200 rounded-xl md:rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all text-sm md:text-base">
                     </div>
-                    <input type="email" id="email" required placeholder="Email Profissional"
+                    <input type="email" id="email" required placeholder="E-mail"
                         class="w-full p-4 md:p-5 bg-white border border-slate-200 rounded-xl md:rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all text-sm md:text-base">
-                    <textarea id="mensagem" required rows="4" placeholder="Quais marcas despertaram seu interesse?"
+                    <textarea id="mensagem" required rows="4" placeholder="Escreva sua mensagem..."
                         class="w-full p-4 md:p-5 bg-white border border-slate-200 rounded-xl md:rounded-2xl outline-none focus:ring-4 focus:ring-blue-100 transition-all resize-none text-sm md:text-base"></textarea>
                     <button type="submit"
                         class="w-full bg-blue-600 text-white py-4 md:py-6 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-2xl hover:bg-blue-700 transition-all">SOLICITAR
@@ -924,7 +924,7 @@
             const email = document.getElementById('email').value.trim();
             const msg = document.getElementById('mensagem').value.trim();
 
-            const textoFinal = `*SITE MAVECH - NOVO CONTATO*\n\n*Nome:* ${nome}\n*CNPJ:* ${cnpj}\n*Telefone:* ${tel}\n*E-mail:* ${email}\n*Mensagem:* ${msg}`;
+            const textoFinal = `*Mavech Representações - Novo Contato*\n\n*Nome:* ${nome}\n*CNPJ:* ${cnpj}\n*Telefone:* ${tel}\n*E-mail:* ${email}\n*Mensagem:* ${msg}`;
             const url = `https://wa.me/5511985370508?text=${encodeURIComponent(textoFinal)}`;
             window.open(url, '_blank');
         });
